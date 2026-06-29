@@ -44,7 +44,7 @@ function MetricChip({ label, value }: { label: string; value: string | number })
 
 function RecCard({ rec }: { rec: Recommendation }) {
   const [localStatus, setLocalStatus] = useState(rec.status)
-  const metrics = rec.currentMetric as Record<string, number>
+  const metrics = rec.currentMetric as unknown as Record<string, number>
 
   return (
     <Card className={localStatus === "approved" ? "border-green-200 bg-green-50/30" : localStatus === "rejected" ? "border-slate-200 opacity-70" : ""}>
